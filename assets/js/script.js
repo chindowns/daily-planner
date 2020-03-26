@@ -4,6 +4,28 @@ var planner = [];
 var now = new Date();
 console.log(now);
 
+
+// var init = function
+function init() {
+    // Populate the calendar with stored data from previous session between 8AM and 5PM (1700)
+    for (i = 8; i < 18; i++) {
+        var time = i + "00";
+            console.log("LocalStorage Time is: " + time);
+        var timeData = localStorage.getItem(time);
+            console.log("LocalStorage Value for time: " + timeData);
+        if (timeData !== null) {
+            document.getElementById(time).value = timeData;
+        }
+        var time = i + "30";
+            console.log("LocalStorage Time is: " + time);
+        var timeData = localStorage.getItem(time);
+            console.log("LocalStorage Value for time: " + timeData);
+        if (timeData !== null) {
+            document.getElementById(time).value = timeData;
+    }
+    }
+}
+
 // Set the date in the table header
 var displayHeaderDate = function displayHead() {
     var arrMonth = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -27,24 +49,37 @@ var displayHeaderDate = function displayHead() {
     }
 
     var today = dayOfWeek + " " + month + " " + arrToday[2] + ", " + arrToday[3];
-    elemTableDate.innerHTML = today;
+    // elemTableDate.innerHTML = today;
 }
 
 displayHeaderDate();
+init();
 
 
 $(document).ready(function () {
-
+    // Display the today's in the header
     $("#table-date").text(moment().format("dddd, MMMM Do YYYY"));
+
+
+
 
     $("input").on("change", function(event){
         event.preventDefault();
         var plannerInput = $(this).val();
+        var time = $(this).attr("id");
+
+        localStorage.setItem(time, plannerInput);
 
         // if(this === "") {clearInput(plannerInput)}
+        
+        // object is pushed to planner array
+
+        
+        
 
         console.log(this)
         console.log(plannerInput + " = plannerInput")
+        console.log(this.id)
         
     });
 
@@ -53,83 +88,4 @@ $(document).ready(function () {
 
         return;
     }
-
-
-
- // Current Time
-    // Here we want to use setInterval to constantly update the time
-    let updateTime = function () {
-        let currentTime = moment().format('h:mm:ss')
-        $("#time").text(currentTime)
-    }
-
-    // Here we will get the number of hours in the year
-    let updateHour = function () {
-        let date = moment().dayOfYear()
-        let yearHours = date * 24
-        let todayHours = moment().hour();
-        let sumHours = yearHours + todayHours
-        $("#hours").text(sumHours)
-    }
-
-    // Here we will get the number of minutes in the week
-    let updateMinutes = function () {
-        let date = moment().weekday();
-        let weekMinutes = (date * 24 * 60) + (moment().minute());
-        $("#minutes").text(weekMinutes);
-    }
-
-    // Here we will get the number of seconds in the day
-    let updateSeconds = function () {
-        let todayHours = moment().hour();
-        let todaySeconds = todayHours * 60 * 60;
-        let thisSecond = moment().second();
-        let sumSeconds = thisSecond + todaySeconds;
-        $("#seconds").text(sumSeconds);
-    }
-
-    let countdown = function () {
-
-        // Friday
-        let friday = moment().day("fr")._d
-
-        // convert this into day of the year
-        let fridayDate = moment(friday).dayOfYear();
-
-        // This will get the milliseconds of Friday
-        let fridayMils = fridayDate * 24 * 60 * 60 * 1000
-        // Turn into seconds
-
-        // Today
-        // Turn into milliseconds
-
-        let date = moment().dayOfYear()
-        let yearMils = date * 24 * 60 * 60 * 1000
-        let todayMils = moment().hour() * 60 * 60 * 1000;
-        let thisMilsSecond = moment().second() * 1000;
-        let thisMils = moment().millisecond();
-
-        // This value should be increasing over time
-        let sumMils = yearMils + todayMils + thisMilsSecond + thisMils;
-
-        let ms = fridayMils - sumMils;
-        $("#countdown").text(ms)
-    }
-
-    // To initally set the times, we will call the functions
-    updateTime();
-    updateHour();
-    updateMinutes();
-    updateSeconds();
-    countdown();
-
-    // To continuously call the functions, we will use setInterval
-    setInterval(updateTime, 1000);
-    setInterval(updateHour, 1000);
-    setInterval(updateMinutes, 1000);
-    setInterval(updateSeconds, 1000);
-    setInterval(countdown, 1);
-
-})
-
-
+});
