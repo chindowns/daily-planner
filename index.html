@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -29,28 +31,109 @@
       <p id="currentDay" class="lead"></p>
     </header>
     <div class="container">
-      <table class="table table-dark table-hover table-sm">
+      <table class="table table-light table-hover table-sm" style="font-size: 30px;">
         <thead>
       <tr>
-        <th colspan="3" id="table-date"></th>
+        <th class="text-center p-3" colspan="3" id="table-date"></th>
       </tr>
     </thead>
       <tbody>
       <tr class="8am 00m">
         <th rowspan="2" style="width:50px;">8 AM</td>
         <th style="width:25px;">00</td>
-        <td id="8:00" ></td>
+        <td ><input class="" type="text" id="800" name="" value=""></td>
       </tr>
       <tr class="8am 30m">
         <th>30</td>
-        <td id="8:30"></td>
+        <td ><input type="text" id="830" name=""></td>
       </tr>
+      <tr class="9am 00m">
+        <th rowspan="2" style="width:50px;">9 AM</td>
+        <th style="width:25px;">00</td>
+        <td  ><input type="text" id="900" name=""></td>
+      </tr>
+      <tr class="9am 30m">
+        <th>30</td>
+        <td id="930"><input type="text" id="930" name=""></td>
+      </tr>      
+      <tr class="10am 00m">
+        <th rowspan="2" style="width:50px;">10 AM</td>
+        <th style="width:25px;">00</td>
+        <td id="1000" ><input type="text" id="1000" name=""></td>
+      </tr>
+      <tr class="10am 30m">
+        <th>30</td>
+        <td id="1030"><input type="text" id="1030" name=""></td>
+      </tr>
+      <tr class="11am 00m">
+        <th rowspan="2" style="width:50px;">11 AM</td>
+        <th style="width:25px;">00</td>
+        <td id="1100" ><input type="text" id="1100" name=""></td>
+      </tr>
+      <tr class="11am 30m">
+        <th>30</td>
+        <td id="1130"><input type="text" id="1130" name=""></td>
+      </tr>
+      <tr class="12pm 00m">
+        <th rowspan="2" style="width:50px;">12 PM</td>
+        <th style="width:25px;">00</td>
+        <td id="1200" ><input type="text" id="1200" name=""></td>
+      </tr>
+      <tr class="12pm 30m">
+        <th>30</td>
+        <td id="1230"><input type="text" id="1230" name=""></td>
+      </tr>
+      <tr class="1pm 00m">
+        <th rowspan="2" style="width:50px;">1 PM</td>
+        <th style="width:25px;">00</td>
+        <td id="100" ><input type="text" id="1300" name=""></td>
+      </tr>
+      <tr class="1pm 30m">
+        <th>30</td>
+        <td id="130"><input type="text" id="1330" name=""></td>
+      </tr>
+      <tr class="2pm 00m">
+        <th rowspan="2" style="width:50px;">2 PM</td>
+        <th style="width:25px;">00</td>
+        <td id="200" ><input type="text" id="1400" name=""></td>
+      </tr>
+      <tr class="2pm 30m">
+        <th>30</td>
+        <td id="230"><input type="text" id="1430" name=""></td>
+      </tr>
+      <tr class="3pm 00m">
+        <th rowspan="2" style="width:50px;">3 PM</td>
+        <th style="width:25px;">00</td>
+        <td id="300" ><input type="text" id="1500" name=""></td>
+      </tr>
+      <tr class="3pm 30m">
+        <th>30</td>
+        <td id="330"><input type="text" id="1530" name=""></td>
+      </tr>
+      <tr class="4pm 00m">
+        <th rowspan="2" style="width:50px;">4 PM</td>
+        <th style="width:25px;">00</td>
+        <td id="400" ><input type="text" id="1600" name=""></td>
+      </tr>
+      <tr class="4pm 30m">
+        <th>30</td>
+        <td id="430"><input type="text" id="1630" name=""></td>
+      </tr>
+      <tr class="5pm 00m">
+        <th rowspan="2" style="width:50px;">5 PM</td>
+        <th style="width:25px;">00</td>
+        <td id="500" ><input type="text" id="1700" name=""></td>
+      </tr>
+      <tr class="5pm 30m">
+        <th>30</td>
+        <td id="530"><input type="text" id="1730" name=""></td>
+      </tr>
+
     </tbody>
     </table>
       
     </div>
     <script src="assets/js/script.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+
   </body>
 </html>
