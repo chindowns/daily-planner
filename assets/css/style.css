@@ -18,10 +18,16 @@ table {
 }
 
 tbody > tr {
-  width: 25px;
-  border-bottom:2px solid darkgray;
+    border-bottom:2px solid darkgray;
+    vertical-align: middle;
+  }
 
+tbody > tr > th {
+  width: 25px;
+  vertical-align: middle;
 }
+
+input {width:100%;}
 
 .jumbotron {
   text-align: center;
