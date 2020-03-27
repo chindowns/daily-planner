@@ -17,6 +17,12 @@ table {
   margin: 10px auto;
 }
 
+tbody > tr {
+  width: 25px;
+  border-bottom:2px solid darkgray;
+
+}
+
 .jumbotron {
   text-align: center;
   background-color: transparent;
