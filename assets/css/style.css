@@ -4,7 +4,7 @@ body {
   line-height: 1;
 }
 
-textarea{
+input {
   background: transparent;
   border: none;
   resize: none;
@@ -13,12 +13,18 @@ textarea{
   padding: 10px;
 }
 
+table {
+  margin: 10px auto;
+}
+
 .jumbotron {
   text-align: center;
   background-color: transparent;
   color: black;
   border-radius: 0;
   border-bottom: 10px solid black;
+
+  padding: 0px;
 }
 
 .description{

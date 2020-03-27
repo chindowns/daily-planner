@@ -1,9 +1,6 @@
 var elemTableDate = document.querySelector("#table-date");
-var planner = [];
 
 var now = new Date();
-console.log(now);
-
 
 // var init = function
 function init() {
@@ -12,17 +9,17 @@ function init() {
         var time = i + "00";
             console.log("LocalStorage Time is: " + time);
         var timeData = localStorage.getItem(time);
-            console.log("LocalStorage Value for time: " + timeData);
         if (timeData !== null) {
+            console.log("LocalStorage Value for time: " + timeData);
             document.getElementById(time).value = timeData;
         }
         var time = i + "30";
             console.log("LocalStorage Time is: " + time);
         var timeData = localStorage.getItem(time);
-            console.log("LocalStorage Value for time: " + timeData);
         if (timeData !== null) {
+            console.log("LocalStorage Value for time: " + timeData);
             document.getElementById(time).value = timeData;
-    }
+        }
     }
 }
 
@@ -30,14 +27,14 @@ function init() {
 var displayHeaderDate = function displayHead() {
     var arrMonth = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     var arrDayOfWeek = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
-    var arrToday = String(now).split(" ", 4);
+    var arrToday = String(now).split(" ", 5);
     var month;
     var dayOfWeek;
+    console.log(arrToday);
     // Use for statement to interate through f the format of the date MMM DD YYYY
     for (var i = 0; i < arrMonth.length; i++) {
         if (arrMonth[i].includes(arrToday[1])) {
             month = arrMonth[i];
-            console.log("this is the month: " + month);
         }
     }
 
@@ -60,9 +57,6 @@ $(document).ready(function () {
     // Display the today's in the header
     $("#table-date").text(moment().format("dddd, MMMM Do YYYY"));
 
-
-
-
     $("input").on("change", function(event){
         event.preventDefault();
         var plannerInput = $(this).val();
@@ -70,22 +64,5 @@ $(document).ready(function () {
 
         localStorage.setItem(time, plannerInput);
 
-        // if(this === "") {clearInput(plannerInput)}
-        
-        // object is pushed to planner array
-
-        
-        
-
-        console.log(this)
-        console.log(plannerInput + " = plannerInput")
-        console.log(this.id)
-        
     });
-
-
-    function clearInput() {
-
-        return;
-    }
 });
