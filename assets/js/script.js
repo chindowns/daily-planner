@@ -23,10 +23,10 @@ function setPlannerColors() {
         var trEl = "#"+trArr[i];
         presentTime = time - 29;
 
-        console.log("=========================")
-        console.log("Time is a "+typeof(time) + " " + time);
-        console.log("trArr is a " + typeof(trArr[i]) + " " + trArr[i]);
-        console.log("presentTime " + typeof(presentTime) + " " + presentTime);
+        // console.log("=========================")
+        // console.log("Time is a "+typeof(time) + " " + time);
+        // console.log("trArr is a " + typeof(trArr[i]) + " " + trArr[i]);
+        // console.log("presentTime " + typeof(presentTime) + " " + presentTime);
 
         if (trArr[i] < time) {
             $(trEl).addClass("past"); 
